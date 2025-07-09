@@ -1,0 +1,10 @@
+This is a Documentation of how to upload project on github
+
+Before anything make sure to add .env to .gitignore file to hide api keys
+
+1. Open the terminal using - Ctrl + `
+2. (Optional)Make a requirements.txt file - pip install pipreqs->pipreqs
+3. git init -> git add -A
+4. git commit -m 'first commit'
+5. git remote add origin <link of repo> (without the braces)
+6. git push -u origin master / git push -u origin main
