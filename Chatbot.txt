@@ -1,0 +1,13 @@
+1. pip install langchain streamlit langchain-openai python-dotenv
+2. First, we set the page configuration (Give page_title, page_icon, etc)
+3. Then, we set the user_query = st.chat_input("Enter your i/p here")
+4. We set the name for the user query as "Human" and ai response as "AI"
+5. To create the response chain, we create a function called get_response passing query and chat_history
+6. template = """prompt Chat history: {chat_history} User question: {user_question}"""
+7. define prompt, llm and then make the chain = prompt | llm | StrOutputParser()
+8. To help the chatbot return as a stream and not just the final output - return chain.stream({
+	"chat_history": chat_history,
+	"user_question": query
+})
+9. get the output using st.session_state.chat_history(AIMessage(ai_response))
+10. Now you can deploy the this chatbot as an app using streamlit community cloud

@@ -1,0 +1,8 @@
+Hosting python app onto Streamlit
+
+1. pip install pipreqs
+2. pipreqs (in terminal)
+3. upload the project to GitHub
+4. Create app on Streamlit Community Cloud
+5. add the secret api key in the settings
+6. Reboot the app and Enjoy!
