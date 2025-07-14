@@ -1,0 +1,16 @@
+BERT Implementation
+
+1. pip install transformers torch
+2. from transformers import BertTokenizer, BertForSequenceClassification
+3. define the model using model = BertForSequenceClassification.from_pretrained(model_name)
+4. define the tokenizer using tokenizer = BertTokenizer.from_pretrained(model_name)
+5. define the input as inputs = tokenizer(sentence, return_tensors="pt", truncation=True, padding=True)
+6. configure the output
+# Forward pass
+with torch.no_grad():
+    outputs = model(**inputs)
+
+# Get predicted class
+probs = F.softmax(outputs.logits, dim=1)
+predicted_class = torch.argmax(probs).item()
+7. Print the output with +1 (Classes are 0-Indexed)
